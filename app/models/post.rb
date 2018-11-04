@@ -8,9 +8,9 @@ class Post < ActiveRecord::Base
     # validate
     # Finally, add a custom validator to Post that ensures the title is sufficiently clickbait-y. If the title does not contain "Won't Believe", "Secret", "Top [number]", or "Guess", the validator should return false
 
-    def not_click_bait
-      valid = nil
-      if title
+  def not_click_bait
+    valid = nil
+    if title
       phrase_array = ["Won't Believe", "Secret", "Top [number]", "Guess"]
       phrase_array.each {|phrase| valid = true if title.include?(phrase) }
       if valid == true
